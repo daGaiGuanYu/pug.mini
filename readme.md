@@ -7,7 +7,7 @@
 npm install pug.mini
 ```
 ##### go
-```
+```js
 const pugEl = require('pug.mini')
 
 console.log(pugEl('.class1')) // <div id="" class="class1"/>
