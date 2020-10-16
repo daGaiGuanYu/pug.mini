@@ -1,0 +1,19 @@
+{
+  "name": "pug.mini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "example": "node ./example/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daGaiGuanYu/pug.mini.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daGaiGuanYu/pug.mini/issues"
+  },
+  "homepage": "https://github.com/daGaiGuanYu/pug.mini#readme"
+}
