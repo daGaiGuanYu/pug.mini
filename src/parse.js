@@ -1,6 +1,6 @@
 var startWith = require('./start-with')
 
-module.exports = function(el, attr, content){
+module.exports = function(el){
   if(!el)
     throw Error('需要一个 pug 模板字符串')
 

@@ -7,10 +7,6 @@ var parse = require('./parse')
 module.exports = function(el, attr){
   // 修剪 el
   el = el.trim()
-
-  var attrStr = ''
-  for(var key in attr)
-    attrStr += (' ' + key + '="' + attr[key] + '"')
   
   var conf = parse(el)
   var idStr = conf.id
@@ -19,6 +15,10 @@ module.exports = function(el, attr){
   var classStr = conf.classList.length
     ?(' class="' + conf.classList.join(' ') + '"')
     :''
+
+  var attrStr = ''
+  for(var key in attr)
+    attrStr += (' ' + key + '="' + attr[key] + '"')
 
   return '<' + conf.tag + idStr + classStr + attrStr + '>' + conf.content + '</' + conf.tag + '>'
 }
