@@ -1,3 +1,4 @@
+// TODO 测试用例：使用断言
 var pugEl = require('../src/index')
 
 var test = [
@@ -33,3 +34,19 @@ for(var tmpl of test)
   console.log(pugEl(tmpl, {
     name: 'gy'
   }))
+
+console.log('\n\n')
+
+for(var tmpl of test){
+  tmpl += ' haha'
+  console.log(pugEl(tmpl))
+}
+
+console.log('\n\n')
+
+for(var tmpl of test){
+  tmpl += ' haha'
+  console.log(pugEl(tmpl, {
+    name: 'gy'
+  }))
+}

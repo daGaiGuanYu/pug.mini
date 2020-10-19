@@ -1,9 +1,16 @@
 var startWith = require('./start-with')
 
-module.exports = function(el){
+module.exports = function(el, attr, content){
   if(!el)
     throw Error('需要一个 pug 模板字符串')
-  
+
+  var content = ''
+  var contentIndex = el.indexOf(' ')
+  if(contentIndex > -1){
+    content = el.slice(contentIndex + 1)
+    el = el.slice(0, contentIndex)
+  }
+
   var tag = 'div'
   if(startWith.letter(el)){
     var indexSharp = el.indexOf('#')
@@ -21,6 +28,7 @@ module.exports = function(el){
       }
     }
   }
+
   var id = ''
   if(startWith.sharp(el)){
     var indexDot = el.indexOf('.')
@@ -32,7 +40,11 @@ module.exports = function(el){
       el = ''
     }
   }
+
   var classList = el.split('.')
   classList.shift()
-  return '<' + tag + ' id="' + id + '" class="' + classList.join(' ') + '"'
+
+  return {
+    content, tag, id, classList
+  }
 }
